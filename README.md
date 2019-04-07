@@ -5,9 +5,9 @@
 Run the following commands to build the document, they run latex, biber for the bibliography, and mpost for the Feynman graphs.
 
 ```
-latex main.tex
+pdflatex --file-line-error --synctex=1 main.tex
 
-biber bibliography
+biber main
 
 mpost fgraphs
 mpost fgraphs2
@@ -19,5 +19,5 @@ mpost fyDeltaPlus
 mpost fyCoh
 mpost fyDIS
 
-latex main.tex
+pdflatex --file-line-error --synctex=1 main.tex
 ```
