@@ -1,0 +1,430 @@
+\chapter{Systematic Covariance Matrices}
+\label{ch:appendix_systematics}
+
+
+This appendix collects all the covariance matrices for all the systematic uncertainties that affect the cross section measurement presented in this thesis, that have not already been shown in Chapter~\ref{ch:systematics}.
+For instance, this appendix shows covariance matrices 
+\begin{itemize}
+\item including only \acrshort{cc}\acrshort{qe} and \acrshort{cc}\acrshort{mec} uncertainties in Figure~\ref{fig:ccqe_ccmec_multisim_mumom};
+\item including only particle re-interaction uncertainties in Figure~\ref{fig:reinteraction_multisim_mumom};
+\item including only beam flux uncertainties in Figure~\ref{fig:flux_multisim_mumom};
+\item including only simulated cosmic background uncertainties in Figure~\ref{fig:overlay_multisim_mumom};
+\item including only simulated dirt background uncertainties in Figure~\ref{fig:dirt_multisim_mumom};
+\item including only \acrshort{mc} statistical uncertainties in Figure~\ref{fig:mc_stat_multisim_mumom}.
+\end{itemize}
+
+
+\begin{figure}[]
+\centering
+\subfloat[][]
+   {\includegraphics[width=.5\textwidth]{images/ccqe_ccmec_covariance_plots/extra_syst_mumom_cov_matrix_2d}
+   \label{fig:ccqe_ccmec_mumom_cov_matrix_2d}} 
+\subfloat[][]
+   {\includegraphics[width=.5\textwidth]{images/ccqe_ccmec_covariance_plots/extra_syst_muangle_cov_matrix_2d}
+   \label{fig:ccqe_ccmec_multisim_muangle_cov_matrix_2d}} \\
+\subfloat[][]
+   {\includegraphics[width=.85\textwidth]{images/ccqe_ccmec_covariance_plots/extra_syst_muangle_mumom_cov_matrix_2d}
+   \label{fig:extra_syst_ccmec_multisim_muangle_mumom_cov_matrix_2d}} \quad
+\caption[\acrshort{cc} \acrshort{qe} and \acrshort{mec} Uncertainties - Covariance Matrices]{\emph{\acrshort{cc} \acrshort{qe} and \acrshort{mec} Uncertainties.} 
+Covariance matrices for the single differential cross section in $p_\mu$~\protect\subref{fig:ccqe_ccmec_mumom_cov_matrix_2d}, in $\cos\theta_\mu$~\protect\subref{fig:ccqe_ccmec_multisim_muangle_cov_matrix_2d} and the double differential cross section in $(p_\mu, \cos\theta_\mu)$~\protect\subref{fig:extra_syst_ccmec_multisim_muangle_mumom_cov_matrix_2d}. 
+Only \acrshort{cc} \acrshort{qe} and \acrshort{mec} related uncertainties are included.
+}
+\label{fig:ccqe_ccmec_multisim_mumom}
+\end{figure}
+
+
+
+
+%\begin{figure}[t]
+%%\begin{adjustwidth}{-1cm}{-1cm}
+%\centering
+%\subfloat[][Data extracted cross sections.]
+%   {\includegraphics[width=.45\textwidth]{images/ccqe_ccmec_covariance_plots/extra_syst_mumom_xsec_all_fancy}
+%   \label{fig:ccqe_ccmec_multisim_mumom_xsec_all_fancy}} \quad
+%\subfloat[][Covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/ccqe_ccmec_covariance_plots/extra_syst_mumom_cov_matrix_2d}
+%   \label{fig:ccqe_ccmec_multisim_mumom_cov_matrix_2d}} \quad
+%\subfloat[][Fractional covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/ccqe_ccmec_covariance_plots/extra_syst_mumom_cov_frac_matrix_2d}
+%   \label{fig:ccqe_ccmec_multisim_mumom_cov_frac_matrix_2d}} \quad
+%\subfloat[][Correlation matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/ccqe_ccmec_covariance_plots/extra_syst_mumom_corr_matrix_2d}
+%   \label{fig:ccqe_ccmec_multisim_mumom_corr_matrix_2d}} \quad
+%\caption[\acrshort{cc}QE/\acrshort{cc}MEC Uncertainties - $p_\mu$]{\emph{\acrshort{cc}QE/\acrshort{cc}MEC Uncertainties.} Plot \ref{fig:ccqe_ccmec_multisim_mumom_xsec_all_fancy} shows the data extracted differential cross section in muon momentum for all the simulated universes in the colour map. Only \acrshort{cc}QE and \acrshort{cc}MEC variations are included in these plots. The red graph shows the data extracted cross section for the nominal \acrshort{mc}. The red error bars show the flux systematic uncertainties derived from the multisims according to Eq.~\eqref{eq:cov_syst_uni}. Figures \ref{fig:ccqe_ccmec_multisim_mumom_cov_matrix_2d}, \ref{fig:ccqe_ccmec_multisim_mumom_cov_frac_matrix_2d} and \ref{fig:ccqe_ccmec_multisim_mumom_corr_matrix_2d} show the covariance, the fractional covariance, and the correlation matrices respectively.}
+%\label{fig:ccqe_ccmec_multisim_mumom}
+%%\end{adjustwidth}
+%\end{figure}
+%
+%\begin{figure}[t]
+%%\begin{adjustwidth}{-1cm}{-1cm}
+%\centering
+%\subfloat[][Data extracted cross sections.]
+%   {\includegraphics[width=.45\textwidth]{images/ccqe_ccmec_covariance_plots/extra_syst_muangle_xsec_all_fancy}
+%   \label{fig:ccqe_ccmec_multisim_muangle_xsec_all_fancy}} \quad
+%\subfloat[][Covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/ccqe_ccmec_covariance_plots/extra_syst_muangle_cov_matrix_2d}
+%   \label{fig:ccqe_ccmec_multisim_muangle_cov_matrix_2d}} \quad
+%\subfloat[][Fractional covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/ccqe_ccmec_covariance_plots/extra_syst_muangle_cov_frac_matrix_2d}
+%   \label{fig:ccqe_ccmec_multisim_muangle_cov_frac_matrix_2d}} \quad
+%\subfloat[][Correlation matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/ccqe_ccmec_covariance_plots/extra_syst_muangle_corr_matrix_2d}
+%   \label{fig:ccqe_ccmec_multisim_muangle_corr_matrix_2d}} \quad
+%\caption[\acrshort{cc}QE/\acrshort{cc}MEC Uncertainties - $\cos\theta_\mu$]{\emph{\acrshort{cc}QE/\acrshort{cc}MEC Uncertainties.} Plot \ref{fig:ccqe_ccmec_multisim_muangle_xsec_all_fancy} shows the data extracted differential cross section in muon angle for all the simulated universes in the colour map. Only \acrshort{cc}QE and \acrshort{cc}MEC variations are included in these plots. The red graph shows  the data extracted cross section for the nominal \acrshort{mc}. The red error bars show the flux systematic uncertainties derived from the multisims according to Eq.~\eqref{eq:cov_syst_uni}. Figures \ref{fig:ccqe_ccmec_multisim_muangle_cov_matrix_2d}, \ref{fig:ccqe_ccmec_multisim_muangle_cov_frac_matrix_2d} and \ref{fig:ccqe_ccmec_multisim_muangle_corr_matrix_2d} show the covariance, the fractional covariance, and the correlation matrices respectively.}
+%\label{fig:ccqe_ccmec_multisim_muangle}
+%%\end{adjustwidth}
+%\end{figure}
+%
+%\begin{figure}[]
+%\centering
+%\includegraphics[width=.75\textwidth]{images/ccqe_ccmec_covariance_plots/extra_syst_muangle_mumom_cov_matrix_2d}
+%\caption[\acrshort{cc}QE/\acrshort{cc}MEC Uncertainties - $(p_\mu, \cos\theta_\mu)$]{\emph{\acrshort{cc}QE/\acrshort{cc}MEC Uncertainties.} Covariance matrix for the double differential cross section. Only \acrshort{cc}QE and \acrshort{cc}MEC variations are included.}
+%\label{fig:extra_syst_ccmec_multisim_muangle_mumom_cov_matrix_2d}
+%\end{figure}
+
+%\begin{figure}[]
+%\centering
+%\includegraphics[width=.75\textwidth]{images/ccqe_ccmec_covariance_plots/extra_syst_muangle_mumom_xsec_all_fancy_2d}
+%\caption[\acrshort{cc}QE/\acrshort{cc}MEC Uncertainties - $(p_\mu, \cos\theta_\mu)$]{\emph{\acrshort{cc}QE/\acrshort{cc}MEC Uncertainties.} The green histograms show the extracted data cross section for every universe. The red histogram show the central value cross section, and the vertical error bars show the standard deviation of all the universes w.r.t. the central value (i.e. the systematic uncertainty).}
+%\label{fig:extra_syst_multisim_muangle_mumom_xsec_all_fancy_2d}
+%\end{figure}
+
+
+%******************
+
+
+
+\begin{figure}[]
+\centering
+\subfloat[][]
+   {\includegraphics[width=.5\textwidth]{images/reinteraction_covariance_plots/extra_syst_mumom_cov_matrix_2d}
+   \label{fig:reinteraction_multisim_mumom_cov_matrix_2d}} 
+\subfloat[][]
+   {\includegraphics[width=.5\textwidth]{images/reinteraction_covariance_plots/extra_syst_muangle_cov_matrix_2d}
+   \label{fig:reinteraction_multisim_muangle_cov_matrix_2d}} \\
+\subfloat[][]
+   {\includegraphics[width=.85\textwidth]{images/reinteraction_covariance_plots/extra_syst_muangle_mumom_cov_matrix_2d}
+   \label{fig:extra_syst_muangle_mumom_cov_matrix_2d}} \quad
+\caption[Particle Re-Interaction Uncertainties - Covariance Matrices]{\emph{Particle Re-Interaction Uncertainties.} 
+Covariance matrices for the single differential cross section in $p_\mu$~\protect\subref{fig:reinteraction_multisim_mumom_cov_matrix_2d}, in $\cos\theta_\mu$~\protect\subref{fig:reinteraction_multisim_muangle_cov_matrix_2d} and the double differential cross section in $(p_\mu, \cos\theta_\mu)$~\protect\subref{fig:extra_syst_muangle_mumom_cov_matrix_2d}. 
+Only particle re-interaction related uncertainties are included.
+}
+\label{fig:reinteraction_multisim_mumom}
+\end{figure}
+
+
+
+%\begin{figure}[t]
+%%\begin{adjustwidth}{-1cm}{-1cm}
+%\centering
+%\subfloat[][Data extracted cross sections.]
+%   {\includegraphics[width=.45\textwidth]{images/reinteraction_covariance_plots/extra_syst_mumom_xsec_all_fancy}
+%   \label{fig:reinteraction_multisim_mumom_xsec_all_fancy}} \quad
+%\subfloat[][Covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/reinteraction_covariance_plots/extra_syst_mumom_cov_matrix_2d}
+%   \label{fig:reinteraction_multisim_mumom_cov_matrix_2d}} \quad
+%\subfloat[][Fractional covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/reinteraction_covariance_plots/extra_syst_muangle_mumom_cov_matrix_2d}
+%   \label{fig:reinteraction_multisim_mumom_cov_frac_matrix_2d}} \quad
+%\caption[Particle Re-Interaction Uncertainties - $p_\mu$]{\emph{Particle Re-Interaction Uncertainties.} Plot \ref{fig:reinteraction_multisim_mumom_xsec_all_fancy} shows the data extracted differential cross section in muon momentum for all the simulated universes in the colour map. Only particle reinteraction variations are included in these plots. The red graph shows the data extracted cross section for the nominal \acrshort{mc}. The red error bars show the flux systematic uncertainties derived from the multisims according to Eq.~\eqref{eq:cov_syst_uni}. Figures \ref{fig:reinteraction_multisim_mumom_cov_matrix_2d}, \ref{fig:reinteraction_multisim_mumom_cov_frac_matrix_2d} and \ref{fig:reinteraction_multisim_mumom_corr_matrix_2d} show the covariance, the fractional covariance, and the correlation matrices respectively.}
+%\label{fig:reinteraction_multisim_mumom}
+%%\end{adjustwidth}
+%\end{figure}
+%
+%\begin{figure}[t]
+%%\begin{adjustwidth}{-1cm}{-1cm}
+%\centering
+%\subfloat[][Data extracted cross sections.]
+%   {\includegraphics[width=.45\textwidth]{images/reinteraction_covariance_plots/extra_syst_muangle_xsec_all_fancy}
+%   \label{fig:reinteraction_multisim_muangle_xsec_all_fancy}} \quad
+%\subfloat[][Covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/reinteraction_covariance_plots/extra_syst_muangle_cov_matrix_2d}
+%   \label{fig:reinteraction_multisim_muangle_cov_matrix_2d}} \quad
+%\subfloat[][Fractional covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/reinteraction_covariance_plots/extra_syst_muangle_cov_frac_matrix_2d}
+%   \label{fig:reinteraction_multisim_muangle_cov_frac_matrix_2d}} \quad
+%\subfloat[][Correlation matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/reinteraction_covariance_plots/extra_syst_muangle_corr_matrix_2d}
+%   \label{fig:reinteraction_multisim_muangle_corr_matrix_2d}} \quad
+%\caption[Particle Re-Interaction Uncertainties - $\cos\theta_\mu$]{\emph{Particle Re-Interaction Uncertainties.} Plot \ref{fig:reinteraction_multisim_muangle_xsec_all_fancy} shows the data extracted differential cross section in muon angle for all the simulated universes in the colour map. Only particle reinteraction variations are included in these plots. The red graph shows  the data extracted cross section for the nominal \acrshort{mc}. The red error bars show the flux systematic uncertainties derived from the multisims according to Eq.~\eqref{eq:cov_syst_uni}. Figures \ref{fig:reinteraction_multisim_muangle_cov_matrix_2d}, \ref{fig:reinteraction_multisim_muangle_cov_frac_matrix_2d} and \ref{fig:reinteraction_multisim_muangle_corr_matrix_2d} show the covariance, the fractional covariance, and the correlation matrices respectively.}
+%\label{fig:reinteraction_multisim_muangle}
+%%\end{adjustwidth}
+%\end{figure}
+%
+%
+%\begin{figure}[]
+%\centering
+%\includegraphics[width=.75\textwidth]{images/reinteraction_covariance_plots/extra_syst_muangle_mumom_cov_matrix_2d}
+%\caption[Particle Re-Interaction Uncertainties - $(p_\mu, \cos\theta_\mu)$]{\emph{Particle Re-Interaction Uncertainties.} Covariance matrix for the double differential cross section. Only particle reinteraction variations are included.}
+%\label{fig:extra_syst_muangle_mumom_cov_matrix_2d}
+%\end{figure}
+%
+%\begin{figure}[]
+%\centering
+%\includegraphics[width=.75\textwidth]{images/reinteraction_covariance_plots/extra_syst_muangle_mumom_xsec_all_fancy_2d}
+%\caption[Particle Re-Interaction Uncertainties - $(p_\mu, \cos\theta_\mu)$]{\emph{Particle Re-Interaction Uncertainties.} The green histograms show the extracted data cross section for every universe. The red histogram show the central value cross section, and the vertical error bars show the standard deviation of all the universes w.r.t. the central value (i.e. the systematic uncertainty).}
+%\label{fig:extra_syst_multisim_muangle_mumom_xsec_all_fancy_2d}
+%\end{figure}
+
+
+%***************
+
+
+\begin{figure}[]
+\centering
+\subfloat[][]
+   {\includegraphics[width=.5\textwidth]{images/flux_covariance_plots/flux_multisim_mumom_cov_matrix_2d}
+   \label{fig:flux_multisim_mumom_cov_matrix_2d}} 
+\subfloat[][]
+   {\includegraphics[width=.5\textwidth]{images/flux_covariance_plots/flux_multisim_muangle_cov_matrix_2d}
+   \label{fig:flux_multisim_muangle_cov_matrix_2d}} \\
+\subfloat[][]
+   {\includegraphics[width=.85\textwidth]{images/flux_covariance_plots/flux_multisim_muangle_mumom_cov_matrix_2d}
+   \label{fig:flux_multisim_muangle_mumom_cov_matrix_2d}} \quad
+\caption[Beam Flux Uncertainties - Covariance Matrices]{\emph{Beam Flux Uncertainties.} 
+Covariance matrices for the single differential cross section in $p_\mu$~\protect\subref{fig:flux_multisim_mumom_cov_matrix_2d}, in $\cos\theta_\mu$~\protect\subref{fig:flux_multisim_muangle_cov_matrix_2d} and the double differential cross section in $(p_\mu, \cos\theta_\mu)$~\protect\subref{fig:flux_multisim_muangle_mumom_cov_matrix_2d}. 
+Only beam flux related uncertainties are included.
+}
+\label{fig:flux_multisim_mumom}
+\end{figure}
+
+
+
+
+%\begin{figure}[t]
+%%\begin{adjustwidth}{-1cm}{-1cm}
+%\centering
+%\subfloat[][Data extracted cross sections.]
+%   {\includegraphics[width=.45\textwidth]{images/flux_covariance_plots/flux_multisim_mumom_xsec_all_fancy}
+%   \label{fig:flux_multisim_mumom_xsec_all_fancy}} \quad
+%\subfloat[][Covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/flux_covariance_plots/flux_multisim_mumom_cov_matrix_2d}
+%   \label{fig:flux_multisim_mumom_cov_matrix_2d}} \quad
+%\subfloat[][Fractional covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/flux_covariance_plots/flux_multisim_mumom_cov_frac_matrix_2d}
+%   \label{fig:flux_multisim_mumom_cov_frac_matrix_2d}} \quad
+%\subfloat[][Correlation matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/flux_covariance_plots/flux_multisim_mumom_corr_matrix_2d}
+%   \label{fig:flux_multisim_mumom_corr_matrix_2d}} \quad
+%\caption[Beam Flux Uncertainties - $p_\mu$]{\emph{Beam Flux Uncertainties.} Plot \ref{fig:flux_multisim_mumom_xsec_all_fancy} shows the data extracted differential cross section in muon momentum for all the simulated universes in the colour map. The red graph shows the data extracted cross section for the nominal \acrshort{mc}. The red error bars show the flux systematic uncertainties derived from the multisims according to Eq.~\eqref{eq:cov_syst_uni}. Figures \ref{fig:flux_multisim_mumom_cov_matrix_2d}, \ref{fig:flux_multisim_mumom_cov_frac_matrix_2d} and \ref{fig:flux_multisim_mumom_corr_matrix_2d} show the covariance, the fractional covariance, and the correlation matrices respectively. A 2\% additional uncertainty due to POT counting should be added to these matrices.}
+%\label{fig:flux_multisim_mumom}
+%%\end{adjustwidth}
+%\end{figure}
+%
+%\begin{figure}[t]
+%%\begin{adjustwidth}{-1cm}{-1cm}
+%\centering
+%\subfloat[][Data extracted cross sections.]
+%   {\includegraphics[width=.45\textwidth]{images/flux_covariance_plots/flux_multisim_muangle_xsec_all_fancy}
+%   \label{fig:flux_multisim_muangle_xsec_all_fancy}} \quad
+%\subfloat[][Covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/flux_covariance_plots/flux_multisim_muangle_cov_matrix_2d}
+%   \label{fig:flux_multisim_muangle_cov_matrix_2d}} \quad
+%\subfloat[][Fractional covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/flux_covariance_plots/flux_multisim_muangle_cov_frac_matrix_2d}
+%   \label{fig:flux_multisim_muangle_cov_frac_matrix_2d}} \quad
+%\subfloat[][Correlation matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/flux_covariance_plots/flux_multisim_muangle_corr_matrix_2d}
+%   \label{fig:flux_multisim_muangle_corr_matrix_2d}} \quad
+%\caption[Beam Flux Uncertainties - $\cos\theta_\mu$]{\emph{Beam Flux Uncertainties.} Plot \ref{fig:flux_multisim_muangle_xsec_all_fancy} shows the data extracted cross section for all the simulated universes in the colour map. The red graph shows the data extracted cross section for the nominal \acrshort{mc}. The red error bars show the flux systematic uncertainty derived from the multisims according to Eq.~\eqref{eq:cov_syst_uni}. Figures \ref{fig:flux_multisim_muangle_cov_matrix_2d}, \ref{fig:flux_multisim_muangle_cov_frac_matrix_2d} and \ref{fig:flux_multisim_muangle_corr_matrix_2d} show the covariance, the fractional covariance, and the correlation matrices respectively. A 2\% additional uncertainty due to POT counting should be added to these matrices.}
+%\label{fig:flux_multisim_muangle}
+%%\end{adjustwidth}
+%\end{figure}
+%
+%
+%\begin{figure}[]
+%\centering
+%\includegraphics[width=.75\textwidth]{images/flux_covariance_plots/flux_multisim_muangle_mumom_cov_matrix_2d}
+%\caption[Beam Flux Uncertainties - $(p_\mu, \cos\theta_\mu)$]{\emph{Beam Flux Uncertainties.} Covariance matrix for the double differential cross section. Only beam flux variations are included.}
+%\label{fig:flux_multisim_muangle_mumom_cov_matrix_2d}
+%\end{figure}
+%
+%\begin{figure}[]
+%\centering
+%\includegraphics[width=.75\textwidth]{images/flux_covariance_plots/flux_multisim_muangle_mumom_xsec_all_fancy_2d}
+%\caption[Beam Flux Uncertainties - $(p_\mu, \cos\theta_\mu)$]{\emph{Beam Flux Uncertainties.} The green histograms show the extracted data cross section for every universe. The red histogram show the central value cross section, and the vertical error bars show the standard deviation of all the universes w.r.t. the central value (i.e. the systematic uncertainty).}
+%\label{fig:flux_multisim_muangle_mumom_xsec_all_fancy_2d}
+%\end{figure}
+
+
+
+%***************
+
+% DETECTOR
+
+%***************
+
+
+
+\begin{figure}[]
+\centering
+\subfloat[][]
+   {\includegraphics[width=.5\textwidth]{images/OverlayPlots/cov_cosmic_mumom}
+   \label{fig:cov_cosmic_mumom}} 
+\subfloat[][]
+   {\includegraphics[width=.5\textwidth]{images/OverlayPlots/cov_cosmic_muangle}
+   \label{fig:cov_cosmic_muangle}} \\
+\subfloat[][]
+   {\includegraphics[width=.85\textwidth]{images/OverlayPlots/cov_cosmic_muangle_mumom}
+   \label{fig:cov_cosmic_muangle_mumom}} \quad
+\caption[\acrshort{mc} Cosmic Background Uncertainties - Covariance Matrices]{\emph{\acrshort{mc} Cosmic Background Uncertainties.} 
+Covariance matrices for the single differential cross section in $p_\mu$~\protect\subref{fig:cov_cosmic_mumom}, in $\cos\theta_\mu$~\protect\subref{fig:cov_cosmic_muangle} and the double differential cross section in $(p_\mu, \cos\theta_\mu)$~\protect\subref{fig:cov_cosmic_muangle_mumom}. 
+Only \acrshort{mc} cosmic background related uncertainties are included.
+}
+\label{fig:overlay_multisim_mumom}
+\end{figure}
+
+
+%\begin{figure}[t]
+%\centering
+%\subfloat[][Fractional covariance matrix for muon momentum.]
+%   {\includegraphics[width=.45\textwidth]{images/OverlayPlots/cov_cosmic_frac_mumom}
+%   \label{fig:cov_det_mumom}} \quad
+%\subfloat[][Fractional covariance matrix for muon angle.]
+%   {\includegraphics[width=.45\textwidth]{images/OverlayPlots/cov_cosmic_frac_muangle}
+%   \label{fig:cov_det_muangle}} \quad
+%\caption[\acrshort{mc} Cosmic Background Uncertainties - $p_\mu$ and $\cos\theta_\mu$]{\emph{\acrshort{mc} Cosmic Background Uncertainties.} Differential cross section fractional covariance matrices due to uncertainty in the simulated cosmic background with BNB interactions. These uncertainties have been estimated from comparisons with the overlay sample, that contains BNB simulated neutrino interactions, overlaid with cosmics data.}
+%\label{fig:cov_cosmic}
+%\end{figure}
+%
+%\begin{figure}[]
+%\centering
+%\includegraphics[width=.75\textwidth]{images/OverlayPlots/cov_cosmic_muangle_mumom}
+%\caption[\acrshort{mc} Cosmic Background Uncertainties - $(p_\mu, \cos\theta_\mu)$]{\emph{\acrshort{mc} Cosmic Background Uncertainties.} Covariance matrix for the double differential cross section.}
+%\label{fig:cov_cosmic_muangle_mumom}
+%\end{figure}
+
+
+
+%***************
+
+
+
+\begin{figure}[]
+\centering
+\subfloat[][]
+   {\includegraphics[width=.5\textwidth]{images/dirt_covariance_plots/trkmom_tot_covariance}
+   \label{fig:trkmom_tot_covariance_dirt}} 
+\subfloat[][]
+   {\includegraphics[width=.5\textwidth]{images/dirt_covariance_plots/trkcostheta_tot_covariance}
+   \label{fig:trkcostheta_tot_covariance_dirt}} \\
+\subfloat[][]
+   {\includegraphics[width=.85\textwidth]{images/dirt_covariance_plots/trkcostheta_trkmumom__tot_covariance}
+   \label{fig:trkcostheta_trkmumom__tot_covariance_dirt}} \quad
+\caption[Dirt Background Uncertainties - Covariance Matrices]{\emph{Dirt Background Uncertainties.} 
+Covariance matrices for the single differential cross section in $p_\mu$~\protect\subref{fig:trkmom_tot_covariance_dirt}, in $\cos\theta_\mu$~\protect\subref{fig:trkcostheta_tot_covariance_dirt} and the double differential cross section in $(p_\mu, \cos\theta_\mu)$~\protect\subref{fig:trkcostheta_trkmumom__tot_covariance_dirt}. 
+Only dirt background related uncertainties are included.
+}
+\label{fig:dirt_multisim_mumom}
+\end{figure}
+
+%
+%\begin{figure}[t]
+%\centering
+%\subfloat[][Fractional covariance matrix for muon momentum.]
+%   {\includegraphics[width=.45\textwidth]{images/dirt_covariance_plots/trkmom_tot_fractional_covariance}
+%   \label{fig:cov_det_mumom}} \quad
+%\subfloat[][Fractional covariance matrix for muon angle.]
+%   {\includegraphics[width=.45\textwidth]{images/dirt_covariance_plots/trkcostheta_tot_fractional_covariance}
+%   \label{fig:cov_det_muangle}} \quad
+%\caption[Dirt Background Uncertainties - $p_\mu$ and $\cos\theta_\mu$]{\emph{Dirt Background Uncertainties.} Differential cross section fractional covariance matrices due to uncertainty in the simulated dirt background.}
+%\label{fig:cov_dirt}
+%\end{figure}
+%
+%\begin{figure}[]
+%\centering
+%\includegraphics[width=.75\textwidth]{images/dirt_covariance_plots/trkcostheta_trkmumom__tot_covariance}
+%\caption[Dirt Background Uncertainties - $(p_\mu, \cos\theta_\mu)$]{\emph{Dirt Background Uncertainties.} Covariance matrix for the double differential cross section.}
+%\label{fig:cov_dirt_muangle_mumom}
+%\end{figure}
+%
+
+
+
+%********************
+
+
+\begin{figure}[]
+\centering
+\subfloat[][]
+   {\includegraphics[width=.5\textwidth]{images/mc_stat_covariance_plots/mc_stat_multisim_mumom_cov_matrix_2d}
+   \label{fig:mc_stat_multisim_mumom_cov_matrix_2d}} 
+\subfloat[][]
+   {\includegraphics[width=.5\textwidth]{images/mc_stat_covariance_plots/mc_stat_multisim_muangle_cov_matrix_2d}
+   \label{fig:mc_stat_multisim_muangle_cov_matrix_2d}} \\
+\subfloat[][]
+   {\includegraphics[width=.85\textwidth]{images/mc_stat_covariance_plots/mc_stat_multisim_muangle_mumom_cov_matrix_2d}
+   \label{fig:mc_stat_multisim_muangle_mumom_cov_matrix_2d_2}} \quad
+\caption[\acrshort{mc} Statistical Uncertainties - Covariance Matrices]{\emph{\acrshort{mc} Statistical Uncertainties.} 
+Covariance matrices for the single differential cross section in $p_\mu$~\protect\subref{fig:mc_stat_multisim_mumom_cov_matrix_2d}, in $\cos\theta_\mu$~\protect\subref{fig:mc_stat_multisim_muangle_cov_matrix_2d} and the double differential cross section in $(p_\mu, \cos\theta_\mu)$~\protect\subref{fig:mc_stat_multisim_muangle_mumom_cov_matrix_2d_2}. 
+Only \acrshort{mc} statistics related uncertainties are included.
+}
+\label{fig:mc_stat_multisim_mumom}
+\end{figure}
+
+
+%\begin{figure}[t]
+%%\begin{adjustwidth}{-1cm}{-1cm}
+%\centering
+%\subfloat[][Data extracted cross sections.]
+%   {\includegraphics[width=.45\textwidth]{images/mc_stat_covariance_plots/mc_stat_multisim_mumom_xsec_all_fancy}
+%   \label{fig:mc_stat_multisim_mumom_xsec_all_fancy}} \quad
+%\subfloat[][Covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/mc_stat_covariance_plots/mc_stat_multisim_mumom_cov_matrix_2d}
+%   \label{fig:mc_stat_multisim_mumom_cov_matrix_2d}} \quad
+%\subfloat[][Fractional covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/mc_stat_covariance_plots/mc_stat_multisim_mumom_cov_frac_matrix_2d}
+%   \label{fig:mc_stat_multisim_mumom_cov_frac_matrix_2d}} \quad
+%\subfloat[][Correlation matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/mc_stat_covariance_plots/mc_stat_multisim_mumom_corr_matrix_2d}
+%   \label{fig:mc_stat_multisim_mumom_corr_matrix_2d}} \quad
+%\caption[\acrshort{mc} Statistical Uncertainties - $p_\mu$]{\emph{\acrshort{mc} Statistical Uncertainties.} Plot \ref{fig:mc_stat_multisim_mumom_xsec_all_fancy} shows the data extracted differential cross section in muon momentum for all the simulated universes in the colour map. The red graph shows the data extracted cross section for the nominal \acrshort{mc}. The red error bars show the \acrshort{mc} statistical uncertaintiesderived from the multisims according to Eq.~\eqref{eq:cov_syst_uni}. Figures \ref{fig:mc_stat_multisim_mumom_cov_matrix_2d}, \ref{fig:mc_stat_multisim_mumom_cov_frac_matrix_2d} and \ref{fig:mc_stat_multisim_mumom_corr_matrix_2d} show the covariance, the fractional covariance, and the correlation matrices respectively. A 2\% additional uncertainty due to POT counting should be added to these matrices.}
+%\label{fig:mc_stat_multisim_mumom}
+%%\end{adjustwidth}
+%\end{figure}
+%
+%\begin{figure}[t]
+%%\begin{adjustwidth}{-1cm}{-1cm}
+%\centering
+%\subfloat[][Data extracted cross sections.]
+%   {\includegraphics[width=.45\textwidth]{images/mc_stat_covariance_plots/mc_stat_multisim_muangle_xsec_all_fancy}
+%   \label{fig:mc_stat_multisim_muangle_xsec_all_fancy}} \quad
+%\subfloat[][Covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/mc_stat_covariance_plots/mc_stat_multisim_muangle_cov_matrix_2d}
+%   \label{fig:mc_stat_multisim_muangle_cov_matrix_2d}} \quad
+%\subfloat[][Fractional covariance matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/mc_stat_covariance_plots/mc_stat_multisim_muangle_cov_frac_matrix_2d}
+%   \label{fig:mc_stat_multisim_muangle_cov_frac_matrix_2d}} \quad
+%\subfloat[][Correlation matrix.]
+%   {\includegraphics[width=.45\textwidth]{images/mc_stat_covariance_plots/mc_stat_multisim_muangle_corr_matrix_2d}
+%   \label{fig:mc_stat_multisim_muangle_corr_matrix_2d}} \quad
+%\caption[\acrshort{mc} Statistical Uncertainties - $\cos\theta_\mu$]{\emph{\acrshort{mc} Statistical Uncertainties.} Plot \ref{fig:mc_stat_multisim_muangle_xsec_all_fancy} shows the data extracted cross section for all the simulated universes in the colour map. The red graph shows the data extracted cross section for the nominal \acrshort{mc}. The red error bars show the \acrshort{mc} statistical uncertainties derived from the multisims according to Eq.~\eqref{eq:cov_syst_uni}. Figures \ref{fig:mc_stat_multisim_muangle_cov_matrix_2d}, \ref{fig:mc_stat_multisim_muangle_cov_frac_matrix_2d} and \ref{fig:mc_stat_multisim_muangle_corr_matrix_2d} show the covariance, the fractional covariance, and the correlation matrices respectively. A 2\% additional uncertainty due to POT counting should be added to these matrices.}
+%\label{fig:mc_stat_multisim_muangle}
+%%\end{adjustwidth}
+%\end{figure}
+%
+%
+%
+%\begin{figure}[]
+%\centering
+%\includegraphics[width=.75\textwidth]{images/mc_stat_covariance_plots/mc_stat_multisim_muangle_mumom_cov_matrix_2d}
+%\caption[\acrshort{mc} Statistical Uncertainties - $(p_\mu, \cos\theta\mu$]{\emph{\acrshort{mc} Statistical Uncertainties.} \acrshort{mc} statistics fractional covariance matrix, for the double differential cross section.}
+%\label{fig:mc_stat_multisim_muangle_mumom_cov_matrix_2d}
+%\end{figure}
+%
+%
+%\begin{figure}[]
+%\centering
+%\includegraphics[width=.75\textwidth]{images/mc_stat_covariance_plots/mc_stat_multisim_muangle_mumom_xsec_all_fancy_2d}
+%\caption[\acrshort{mc} Statistical Uncertainties - $(p_\mu, \cos\theta\mu$]{\emph{\acrshort{mc} Statistical Uncertainties.} The green histograms show the extracted data cross section for every universe. The red histogram show the central value cross section, and the vertical error bars show the standard deviation of all the universes w.r.t. the central value (i.e. the systematic uncertainty).}
+%\label{fig:mc_stat_multisim_muangle_mumom_xsec_all_fancy_2d}
+%\end{figure}
+
+
+
+
+
+
+
+
+

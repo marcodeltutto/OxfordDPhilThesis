@@ -1,0 +1,113 @@
+\chapter{Impact of Cherenkov Light to the Analysis}
+\label{ch:cherenkov}
+
+Given the data/\acrshort{mc} disagreement observed in the $\phi$ distribution (see Figure~\ref{fig:trkphi_tune1}), an hypothesis has been raised that Cherenkov light (currently not simulated in our default \acrshort{mc}) may be responsible for such disagreement. We then started an effort to simulate Cherenkov light in addition to the scintillation light. Details can be found on \cite{deltutto_cherenkov}.
+
+The MicroBooNE optical simulation can be run in two different modes:
+\begin{description}
+\item[Full Optical Simulation] Includes GEANT4 simulation of individual optical photons produced along the path of charged particle tracks through both scintillation and Cherenkov processes.
+These photons are stepped around the detector through Rayleigh scatterings, reflections and partial absorption, in order to produce a realistic detector response to the light source. 
+\item[Fast Optical Simulation] Due to the vast number of photons typically produced in a neutrino physics event, the full optical simulation can take hours or days per event. 
+This mode utilises a library of stored visibility data to sample an expected detector response given an isotropic emission of light at some point in the volume. 
+However, only isotropic scintillation light can be handled in this way. Cherenkov photons are directional, and so we cannot take advantage of the direction-averaged properties provided by the fast scintillation library. 
+\end{description}
+
+We have produced a sample of 100k events, similar to the other detector systematics samples, in which the scintillation photons are propagated with the fast optical library, and the Cherenkov photons are propagated step by step by GEANT4.
+
+It was important to check the \acrshort{gqe} modelling, as Cherenkov light wavelength spans on a wider range, while scintillation photons all have 128 nm. We decided to set conservative values for the \acrshort{gqe}, in order to see if Cherenkov light has as impact in the analysis. For this reason, the \acrshort{gqe} has been set to:
+\begin{itemize}
+\item Between 100 and 300 nm: same modelling as for scintillation light at 128 nm. The light will be converted to visible light by the TPB with roughly the same efficiency and emission spectrum. TPB efficiency is close to maximal near 128 nm, so this is a conservative estimate for generating a Cherenkov systematic sample.
+\item Above 300 nm: The attenuation of visible light through our coated acrylic plates has been measured to be ~50\%.  We multiply a representative MicroBooNE \acrshort{pmt} \acrshort{gqe} curve by this factor to get an estimate of the response to photons above 300 nm. To overestimate the response to Cherenkov photons above 300 nm, we use a flat 9\% efficiency, since the \acrshort{gqe} curve peaks at 18\%.
+\end{itemize} 
+
+Figure~\ref{fig:cherenkov_time} shows the distribution of the arrival time of GEANT4 photons w.r.t. the neutrino interaction time. Cherenkov photons are prompt as expected, while scintillation photons have a late light component.
+Figure~\ref{fig:cherenkov_pe} shows the distribution of \acrshort{mc}Flash PE for scintillation and Cherenkov photons. An \acrshort{mc}Flash is a flash containing truth PEs only. The plot shows the small contribution of Cherenkov PEs w.r.t. scintillation PEs.
+
+\begin{figure}[]
+\centering
+\subfloat[][]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/cherenkov_time}
+   \label{fig:cherenkov_time}} \quad
+\subfloat[][]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/cherenkov_pe}
+   \label{fig:cherenkov_pe}} \\
+\caption{The left plot shows the arrival time of GEANT4 photons w.r.t. the neutrino interaction time. The right plot shows the distribution of \acrshort{mc}Flash PE for scintillation and Cherenkov photons.}
+\label{fig:cherenkov_validation}
+\end{figure}
+
+
+Figure~\ref{fig:cv_ch_comparison} shows distribution of selected events and offers a comparison between the central value \acrshort{mc} and our custom simulation which includes a conservative estimate of Cherenkov light. The differences between the two simulations are deemed negligible, also when compared to other detector systematics considered for this analysis.
+
+\begin{figure}[]
+\centering
+\subfloat[][Tune 1.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCV/trkmom_cv}
+   \label{fig:trkmom_cv}} \quad
+\subfloat[][Tune 1 w/ Cherenkov.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCH/trkmom_ch}
+   \label{fig:trkmom_ch}} \quad
+\subfloat[][Tune 1.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCV/trkcostheta_cv}
+   \label{fig:trkcostheta_cv}} \quad
+\subfloat[][Tune 1 w/ Cherenkov.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCH/trkcostheta_ch}
+   \label{fig:trkcostheta_ch}} \quad
+\subfloat[][Tune 1.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCV/trklen_cv}
+   \label{fig:trklen_cv}} \quad
+\subfloat[][Tune 1 w/ Cherenkov.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCH/trklen_ch}
+   \label{fig:trklen_ch}} \quad
+\caption{Distributions of selected events. The black data points symbolise on-beam data with statistical error bars. The stacked coloured histograms represent the Monte Carlo, with the shaded bands representing the statistical uncertainty only. The two red histograms are the signal events (light red are contained tracks, dark red are un-contained). The shaded histogram is off-beam data. Data and \acrshort{mc} correspond to $1.592 \times 10^{20}$ POT. Left plots show \acrshort{mc} from Tune 1 CV, left ones from our custom simulation which includes a conservative estimate of Cherenkov light.}
+\label{fig:cv_ch_comparison}
+\end{figure}
+
+\begin{figure}[]
+\ContinuedFloat
+\centering
+\subfloat[][Tune 1.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCV/trkphi_cv}
+   \label{fig:trkphi_cv}} \quad
+\subfloat[][Tune 1 w/ Cherenkov.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCH/trkphi_ch}
+   \label{fig:trkphi_ch}} \quad
+\subfloat[][Tune 1.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCV/multpfp_cv}
+   \label{fig:multpfp_cv}} \quad
+\subfloat[][Tune 1 w/ Cherenkov.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCH/multpfp_ch}
+   \label{fig:multpfp_ch}} \quad
+\subfloat[][Tune 1.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCV/multtracktol_cv}
+   \label{fig:multtracktol_cv}} \quad
+\subfloat[][Tune 1 w/ Cherenkov.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCH/multtracktol_ch}
+   \label{fig:multtracktol_ch}} \quad
+\caption{Distributions of selected events. The black data points symbolise on-beam data with statistical error bars. The stacked coloured histograms represent the Monte Carlo, with the shaded bands representing the statistical uncertainty only. The two red histograms are the signal events (light red are contained tracks, dark red are un-contained). The shaded histogram is off-beam data. Data and \acrshort{mc} correspond to $1.592 \times 10^{20}$ POT. Left plots show \acrshort{mc} from Tune 1 CV, left ones from our custom simulation which includes a conservative estimate of Cherenkov light.}
+\label{fig:cv_ch_comparison}
+\end{figure}
+
+\begin{figure}[]
+\ContinuedFloat
+\centering
+\subfloat[][Tune 1.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCV/vtxx_cv}
+   \label{fig:vtxx_cv}} \quad
+\subfloat[][Tune 1 w/ Cherenkov.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCH/vtxx_ch}
+   \label{fig:vtxx_ch}} \quad
+\subfloat[][Tune 1.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCV/vtxy_cv}
+   \label{fig:vtxy_cv}} \quad
+\subfloat[][Tune 1 w/ Cherenkov.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCH/vtxy_ch}
+   \label{fig:vtxy_ch}} \quad
+\subfloat[][Tune 1.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCV/vtxz_cv}
+   \label{fig:vtxz_cv}} \quad
+\subfloat[][Tune 1 w/ Cherenkov.]
+   {\includegraphics[width=.45\textwidth]{images/PlotsCherenkov/PlotsCH/vtxz_ch}
+   \label{fig:vtxz_ch}} \quad
+\caption{Distributions of selected events. The black data points symbolise on-beam data with statistical error bars. The stacked coloured histograms represent the Monte Carlo, with the shaded bands representing the statistical uncertainty only. The two red histograms are the signal events (light red are contained tracks, dark red are un-contained). The shaded histogram is off-beam data. Data and \acrshort{mc} correspond to $1.592 \times 10^{20}$ POT. Left plots show \acrshort{mc} from Tune 1 CV, left ones from our custom simulation which includes a conservative estimate of Cherenkov light.}
+\label{fig:cv_ch_comparison}
+\end{figure}

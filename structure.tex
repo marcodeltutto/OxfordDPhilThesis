@@ -1,0 +1,374 @@
+\definecolor{azure}{RGB}{52,177,201} % Define the orange color used for highlighting throughout the document
+
+
+%----------------------------------------------------------------------------------------
+%	MAKETITLE DEFINITION 
+%----------------------------------------------------------------------------------------
+
+%\newcommand*{\logoleft}[1]{\gdef\@logoleft{#1}}
+%\newcommand*{\logorigth}[1]{\gdef\@logorigth{#1}}
+
+\makeatletter
+\def\maketitle{
+  \begin {titlepage}
+    \let \footnotesize \small 
+    \let \footnoterule \relax 
+    \let \footnote \thanks 
+    \@bsmarkseries 
+  
+%    \begin{figure}[!htb]
+%      \begin{minipage}{0.48\textwidth}
+%        \centering
+%        \includegraphics[width=.8\linewidth]{\@logoleft}
+%      \end{minipage}\hfill
+%      \begin {minipage}{0.48\textwidth}
+%        \centering
+%        \includegraphics[width=.9\linewidth]{\@logorigth}
+%      \end{minipage}
+%    \end{figure}   
+
+    \def \@makefnmark {\rlap {\@textsuperscript {\normalfont \@bsthanksheadpre \tamark \@bsthanksheadpost }}}\long
+    \def \@makefntext {\makethanksmark} 
+    %\null \vfil  \vskip 5\p@
+%    \maketitlehookb {\@bspreauthor \@notenumber \@bspostauthor }
+%    \maketitlehookb {\@bspreauthor Version \@versionnumber \@bspostauthor }
+
+    
+%    \null \vfil \vskip 1\p@ \vspace *{\droptitle }
+    \maketitlehooka {\@bspretitle \Huge\textbf\@title \@bsposttitle } 
+    \null \vfil \vskip 10\p@ \vspace *{\droptitle }
+    
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width=.3\linewidth]{oxfordlogo}
+    \end{figure}
+    
+    \null \vfil \vskip 20\p@ \vspace *{\droptitle }
+    \maketitlehookb {\@bspreauthor \huge\@author \@bspostauthor } 
+    \maketitlehookb {\@bspreauthor St Hilda's College \@bspostauthor } 
+    \maketitlehookb {\@bspreauthor University of Oxford \@bspostauthor } 
+%    \vspace{\fill}
+    \null \vfil \vskip 51\p@ \vspace *{\droptitle }
+    \maketitlehookb {\@bspreauthor A thesis submitted in fulfilment of the requirements for the degree of \@bspostauthor } 
+    \maketitlehookb {\@bspreauthor \emph{Doctor of Philosophy} \@bspostauthor } 
+    \maketitlehookb {\@bspreauthor Hilary Term, 2019 \@bspostauthor }
+%    \maketitlehookc {\@bspredate \@date \@bspostdate } 
+%    \maketitlehookd \par \@thanks \vfil \null 
+  \end{titlepage}\@bscontmark
+}
+\makeatother
+
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS/FIGURES/TABLES EDITS
+%----------------------------------------------------------------------------------------
+\makeatletter
+
+\patchcmd{\tableofcontents}
+  {\@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
+  {\addcontentsline{toc}{section}{\contentsname}\markboth{\sffamily\normalsize\bfseries\contentsname}{}}
+  {}{}
+  
+\patchcmd{\listoffigures}
+  {\@mkboth{\MakeUppercase\listfigurename}{\MakeUppercase\listfigurename}}
+  {\addcontentsline{toc}{section}{\listfigurename}\markboth{\sffamily\normalsize\bfseries\listfigurename}{}}
+  {}{}
+  
+\patchcmd{\listoftables}
+  {\@mkboth{\MakeUppercase\listtablename}{\MakeUppercase\listtablename}}
+  {\addcontentsline{toc}{section}{\listtablename}\markboth{\sffamily\normalsize\bfseries\listtablename}{}}
+  {}{}
+  
+  
+\makeatother
+
+
+%----------------------------------------------------------------------------------------
+%	PAGE HEADERS
+%----------------------------------------------------------------------------------------
+
+\usepackage{fancyhdr} % Required for header and footer configuration
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}} % Chapter text font settings
+\renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} % Section text font settings
+%\fancyhf{} \fancyhead[L,RO]{\sffamily\normalsize\thepage} % Font setting for the page number in the header
+\fancyhead[LO]{\rightmark} % Print the nearest section name on the left side of odd pages
+\fancyhead[R]{\leftmark} % Print the current chapter name on the right side of even pages
+\renewcommand{\headrulewidth}{0.5pt} % Width of the rule under the header
+\addtolength{\headheight}{2.5pt} % Increase the spacing around the header slightly
+\renewcommand{\footrulewidth}{0pt} % Removes the rule in the footer
+\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} % Style for when a plain pagestyle is specified
+%\fancyhf{}\fancyfootoffset[F]{3cm}
+%\fancyfoot[L]{\thepage}
+
+% Removes the header from odd empty pages at the end of chapters
+\makeatletter
+\renewcommand{\cleardoublepage}{
+\clearpage\ifodd\c@page\else
+\hbox{}
+\vspace*{\fill}
+\thispagestyle{empty}
+\newpage
+\fi}
+
+
+%----------------------------------------------------------------------------------------
+%	DEFINITION OF COLOURED BOXES
+%----------------------------------------------------------------------------------------
+
+\RequirePackage[framemethod=TikZ]{mdframed} % Required for creating the theorem, definition, exercise and corollary boxes
+
+
+\mdfdefinestyle{exampledefault}{
+  rightline=true,
+  %frametitlerule=true,
+  %frametitlefont=\ttfamily,
+  %frametitlerulecolor=black,
+  %frametitlebackgroundcolor=lightgray,
+  %frametitlerulewidth=2pt,
+  backgroundcolor=light-gray,
+  roundcorner=5pt,
+  %outerlinecolor=blue!70!black,
+  %outerlinewidth=2,
+  leftmargin=20,
+  rightmargin=20,
+  ntheorem=true,
+  innerleftmargin=15, 
+  innertopmargin=1,
+  innerbottommargin=1,
+  outerlinewidth=1,
+  linecolor=light-gray
+}
+\mdfsetup{
+  frametitlealignment=\flushleft
+}
+
+
+% Theorem box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+backgroundcolor=black!5,
+linecolor=azure,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+innerbottommargin=5pt]{tBox}
+
+% Exercise box	  
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+backgroundcolor=azure!10,
+linecolor=azure,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+innerbottommargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt]{eBox}	
+
+% Definition box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+linecolor=azure,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=0pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt,
+innerbottommargin=0pt]{dBox}	
+
+% Corollary box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+rightline=false,
+leftline=true,
+topline=false,
+bottomline=false,
+linecolor=gray,
+backgroundcolor=black!5,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+linewidth=4pt,
+innerbottommargin=5pt]{cBox}
+
+% Creates an environment for each type of theorem and assigns it a theorem text style from the "Theorem Styles" section above and a colored box from above
+\newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
+\newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{azure}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}				  
+\newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
+\newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}		
+\newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}	
+
+%----------------------------------------------------------------------------------------
+%	REMARK ENVIRONMENT
+%----------------------------------------------------------------------------------------
+
+\newenvironment{remark}{\par\vspace{10pt}\small % Vertical white space above the remark and smaller font size
+\begin{list}{}{
+\leftmargin=35pt % Indentation on the left
+\rightmargin=25pt}\item\ignorespaces % Indentation on the right
+\makebox[-2.5pt]{\begin{tikzpicture}[overlay]
+\node[draw=azure!60,line width=1pt,circle,fill=azure!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{azure}{R}};\end{tikzpicture}} % Orange R in a circle
+\advance\baselineskip -1pt}{\end{list}\vskip5pt} % Tighter line spacing and white space after remark
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION NUMBERING IN THE MARGIN
+%----------------------------------------------------------------------------------------
+
+%\makeatletter
+%\renewcommand{\@seccntformat}[1]{\llap{\textcolor{azure}{\csname the#1\endcsname}\hspace{1em}}}
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\textcolor{mygray2}{\csname the#1\endcsname}\hspace{1em}}
+
+
+%----------------------------------------------------------------------------------------
+%	COLORING LINES IN TABLES
+%----------------------------------------------------------------------------------------
+
+\makeatletter
+
+\newcommand*{\@rowstyle}{}
+
+\newcommand*{\rowstyle}[1]{% sets the style of the next row
+  \gdef\@rowstyle{#1}%
+  \@rowstyle\ignorespaces%
+}
+
+\newcolumntype{=}{% resets the row style
+  >{\gdef\@rowstyle{}}%
+}
+
+\newcolumntype{+}{% adds the current row style to the next column
+  >{\@rowstyle}%
+}
+
+\makeatother
+
+
+
+
+\makeatletter
+
+
+\newenvironment{alwayssingle}{%
+       \@restonecolfalse
+       \if@twocolumn\@restonecoltrue\onecolumn
+       \else\if@openright\cleardoublepage\else\clearpage\fi
+       \fi}%
+       {\if@restonecol\twocolumn
+       \else\newpage\thispagestyle{empty}\fi}
+
+
+\newenvironment{abstractseparate} {%
+\newgeometry{margin=3.1cm}
+\thispagestyle{empty}
+\begin{alwayssingle}
+ \begin{center}
+    {\Large \bfseries \@title \par}
+    {{\large \vspace*{2ex} \@author} \par}
+    {\large \vspace*{1ex}
+    {{St. Hilda's College} \par}
+    {University of Oxford \par}
+    \vspace*{1ex}
+    {{A thesis submitted in fulfilment of the requirements for the degree of} \par}
+    {\it {Doctor of Philosophy} \par}
+    \vspace*{2ex}
+    {Hilary Term, 2019} \par}
+%    \vfill
+    {\Large \vspace*{1ex}\bfseries  Abstract}
+ \end{center}
+\vspace{1ex}
+   \setlength{\baselineskip}{18pt}
+}
+{\vfill\end{alwayssingle}\restoregeometry}
+
+
+
+
+
+
+\newenvironment{originality} {%
+\begin{alwayssingle}
+ \begin{center}
+    {\Large \bfseries Statement of Originality \par}
+ \end{center}
+\vspace{1ex}
+   \setlength{\baselineskip}{18pt}
+}
+{\end{alwayssingle}}
+
+
+
+\newenvironment{acknowledgements} {%
+\begin{alwayssingle}
+ \begin{center}
+    {\Large \bfseries Acknowledgements \par}
+ \end{center}
+\vspace{1ex}
+   \setlength{\baselineskip}{18pt}
+}
+{\end{alwayssingle}}
+
+\makeatother
+
+
+%\renewcommand{\section}{\@startsection{section}{1}{\z@}
+%{-4ex \@plus -1ex \@minus -.4ex}
+%{1ex \@plus.2ex }
+%\normalfont\Large\bfseries}}
+%\renewcommand{\subsection}{\@startsection {subsection}{2}{\z@}
+%-3ex \@plus -0.1ex \@minus -.4ex}
+%{0.5ex \@plus.2ex }
+%{\normalfont\sffamily\bfseries}}
+%\renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}
+%{-2ex \@plus -0.1ex \@minus -.2ex}
+%{.2ex \@plus.2ex }
+%{\normalfont\small\sffamily\bfseries}}                        
+%\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
+%{-2ex \@plus-.2ex \@minus .2ex}
+%{.1ex}
+%{\normalfont\small\sffamily\bfseries}}
+
+%\usepackage{titlesec} 
+
+%\titleformat{\chapter}[display]
+%  {\bfseries\Large}
+%  {\filright\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+%  {1ex}
+%  {\titlerule\vspace{1ex}\filleft}
+%  [\vspace{1ex}\titlerule]
+
+%\titleformat{\chapter}[display]
+%  {\sffamily\bfseries\Huge}
+%  {\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+% {1ex}
+% {\vspace{1ex}\filleft}
+% [\vspace{1ex}]
+ 
+
+
+
+
+
+
+
